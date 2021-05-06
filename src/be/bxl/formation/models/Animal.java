@@ -5,23 +5,21 @@ public class Animal {
     private String nom;
     private double poid;
     private double taille;
-    private String sexe;
+    private boolean sexe;
     private int age;
+    private boolean vieMort;
 
-    public Animal(String nom, double poid, double taille, String sexe, int age) {
+    public Animal(String nom, double poid, double taille, boolean sexe, int age) {
         setNom(nom);
         setPoid(poid);
         setTaille(taille);
         setSexe(sexe);
         setAge(age);
+        setVieMort(true);
     }
 
-    public int getCoefficient() {
-        return 1;
-    }
-
-    public double getProbDeces() {
-        return 1;
+    public boolean getVieMort() {
+        return vieMort;
     }
 
     public String getNom() {
@@ -37,11 +35,21 @@ public class Animal {
     }
 
     public String getSexe() {
-        return sexe;
+        return (sexe) ? "mâle" : "femelle";
     }
 
     public int getAge() {
         return age;
+    }
+
+    public int getAgeHumain() { return 1; }
+
+    public double getProbDeces() {
+        return 1;
+    }
+
+    public void setVieMort(boolean vieMort) {
+        this.vieMort = vieMort;
     }
 
     public void setNom(String nom) {
@@ -56,7 +64,7 @@ public class Animal {
         this.taille = taille;
     }
 
-    public void setSexe(String sexe) {
+    public void setSexe(boolean sexe) {
         this.sexe = sexe;
     }
 
@@ -66,7 +74,14 @@ public class Animal {
 
     public void crier() {}
 
-    public int getAgeHumain() {
-        return (getAge() * getCoefficient());
+    public void testDeVie() {
+        if(getVieMort()) {
+            double rand = Math.round(Math.random() * 100);
+            if(rand < this.getProbDeces()) {
+                setVieMort(false);
+            }
+        }
     }
+
+
 }

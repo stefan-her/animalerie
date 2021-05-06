@@ -6,7 +6,8 @@ public class Animalerie {
 
     private ArrayList<Animal> listAnimaux;
 
-    public void Animalerie() {
+    public Animalerie() {
         listAnimaux = new ArrayList<>();
     }
+
 }
