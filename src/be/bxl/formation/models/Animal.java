@@ -8,17 +8,20 @@ public class Animal {
     private String sexe;
     private int age;
 
-    private int coefficient;
-    private double  probDeces;
-
-    public void Animal() {}
+    public Animal(String nom, double poid, double taille, String sexe, int age) {
+        setNom(nom);
+        setPoid(poid);
+        setTaille(taille);
+        setSexe(sexe);
+        setAge(age);
+    }
 
     public int getCoefficient() {
-        return coefficient;
+        return 1;
     }
 
     public double getProbDeces() {
-        return probDeces;
+        return 1;
     }
 
     public String getNom() {
@@ -41,14 +44,6 @@ public class Animal {
         return age;
     }
 
-    public void setCoefficient(int coefficient) {
-        this.coefficient = coefficient;
-    }
-
-    public void setProbDeces(double probDeces) {
-        this.probDeces = probDeces;
-    }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -69,9 +64,9 @@ public class Animal {
         this.age = age;
     }
 
+    public void crier() {}
 
-
-    public int getAgeHumain(int age, int coefficient) {
-        return (age * coefficient);
+    public int getAgeHumain() {
+        return (getAge() * getCoefficient());
     }
 }

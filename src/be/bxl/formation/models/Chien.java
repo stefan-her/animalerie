@@ -2,14 +2,21 @@ package be.bxl.formation.models;
 
 public class Chien extends Animal {
 
+    final private int COEFFICIENT = 7;
+    final private double PROB_DECE = 1;
+    final private String CRI = "OuafWouaf";
+
     private String couleurCollier;
     private boolean dresse;
     private String race;
 
 
-    public void Chien() {
-        setCoefficient(7);
-        setProbDeces(1);
+    public Chien(String nom, double poid, double taille, String sexe, int age,
+                 String couleurCollier, boolean dresse, String race) {
+        super(nom, poid, taille, sexe, age);
+        setCouleurCollier(couleurCollier);
+        setDresse(dresse);
+        setRace(race);
     }
 
     public String getCouleurCollier() {
@@ -36,7 +43,6 @@ public class Chien extends Animal {
         this.race = race;
     }
 
-    public void crier() {
+    public void crier() {}
 
-    }
 }

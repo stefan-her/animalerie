@@ -2,15 +2,25 @@ package be.bxl.formation.models;
 
 public class Chat extends Animal {
 
+    final private int COEFFICIENT = 5;
+    final private double PROB_DECE = 0.5;
+    final private String CRI = "Miaou";
+
     private int energie;
     private int farouche;
     private int calin;
     private boolean longPoil;
     private boolean griffes;
 
-    public void Chat() {
-        setCoefficient(5);
-        setProbDeces(0.5);
+
+    public Chat(String nom, double poid, double taille, String sexe, int age,
+                int energie, int farouche, int calin, boolean longPoil, boolean griffes) {
+        super(nom, poid, taille, sexe, age);
+        setEnergie(energie);
+        setFarouche(farouche);
+        setCalin(calin);
+        setLongPoil(longPoil);
+        setGriffes(griffes);
     }
 
     public int getEnergie() {
@@ -53,7 +63,6 @@ public class Chat extends Animal {
         this.griffes = griffes;
     }
 
-    public void crier() {
+    public void crier() {}
 
-    }
 }
