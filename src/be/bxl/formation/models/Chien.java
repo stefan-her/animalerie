@@ -1,5 +1,7 @@
 package be.bxl.formation.models;
 
+import java.util.HashMap;
+
 public class Chien extends Animal {
 
     final private int COEFFICIENT_VIE_HUMAIN = 7;
@@ -17,6 +19,19 @@ public class Chien extends Animal {
         setCouleurCollier(couleurCollier);
         setDresse(dresse);
         setRace(race);
+    }
+
+    public Chien(HashMap<String, String> animal) {
+        this(
+                (String) animal.get("nom"),
+                (double) Double.parseDouble(animal.get("poid")),
+                (double) Double.parseDouble(animal.get("taille")),
+                (boolean) Boolean.parseBoolean(animal.get("sexe")),
+                (int) Integer.parseInt(animal.get("age")),
+                (String) animal.get("couleurCollier"),
+                (boolean) Boolean.parseBoolean(animal.get("dresse")),
+                (String) animal.get("race")
+        );
     }
 
     public String getCouleurCollier() {
@@ -40,7 +55,7 @@ public class Chien extends Animal {
     }
 
     public void setCouleurCollier(String couleurCollier) {
-        this.couleurCollier = couleurCollier;
+        this.couleurCollier = (couleurCollier.trim() != "") ? couleurCollier : null;
     }
 
     public void setDresse(boolean dresse) {
@@ -48,7 +63,7 @@ public class Chien extends Animal {
     }
 
     public void setRace(String race) {
-        this.race = race;
+        this.race = (race.trim() != "") ? race : null;
     }
 
     public void crier() {

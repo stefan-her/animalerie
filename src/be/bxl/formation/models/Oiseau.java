@@ -1,6 +1,7 @@
 package be.bxl.formation.models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Oiseau extends Animal {
 
@@ -12,10 +13,22 @@ public class Oiseau extends Animal {
     private boolean typeCage;
 
     public Oiseau(String nom, double poid, double taille, boolean sexe, int age,
-                  ArrayList couleurs, boolean typeCage) {
+                  String couleur, boolean typeCage) {
         super(nom, poid, taille, sexe, age);
         setCouleur(couleur);
         setTypeCage(typeCage);
+    }
+
+    public Oiseau(HashMap<String, String> animal) {
+        this(
+                (String) animal.get("nom"),
+                (double) Double.parseDouble(animal.get("poid")),
+                (double) Double.parseDouble(animal.get("taille")),
+                (boolean) Boolean.parseBoolean(animal.get("sexe")),
+                (int) Integer.parseInt(animal.get("age")),
+                (String) animal.get("couleur"),
+                (boolean) Boolean.parseBoolean(animal.get("typeCage"))
+        );
     }
 
     public String getCouleur() {

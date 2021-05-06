@@ -1,5 +1,9 @@
 package be.bxl.formation.models;
 
+import javax.naming.CannotProceedException;
+import java.util.HashMap;
+import java.util.Locale;
+
 public class Chat extends Animal {
 
     final private int COEFFICIENT_VIE_HUMAIN = 5;
@@ -20,6 +24,21 @@ public class Chat extends Animal {
         setCalin(calin);
         setLongPoil(longPoil);
         setGriffes(griffes);
+    }
+
+    public Chat(HashMap<String, String> animal) {
+        this(
+                (String) animal.get("nom"),
+                (double) Double.parseDouble(animal.get("poid")),
+                (double) Double.parseDouble(animal.get("taille")),
+                (boolean) Boolean.parseBoolean(animal.get("sexe")),
+                (int) Integer.parseInt(animal.get("age")),
+                (int) Integer.parseInt(animal.get("energie")),
+                (int) Integer.parseInt(animal.get("farouche")),
+                (int) Integer.parseInt(animal.get("calin")),
+                (boolean) Boolean.parseBoolean(animal.get("longPoil")),
+                (boolean) Boolean.parseBoolean(animal.get("griffes"))
+        );
     }
 
     public int getEnergie() {
