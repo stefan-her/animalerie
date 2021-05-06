@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Chien extends Animal {
 
     final private int COEFFICIENT_VIE_HUMAIN = 7;
-    final private double PROB_DECE = 1;
+    final private double PROB_DECE = 50;
     final private String CRI = "OuafWouaf";
 
     private String couleurCollier;

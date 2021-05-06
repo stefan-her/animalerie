@@ -1,5 +1,6 @@
 package be.bxl.formation;
 
+import be.bxl.formation.models.Animal;
 import be.bxl.formation.models.Animalerie;
 
 import java.util.Scanner;
@@ -16,17 +17,24 @@ public class Main {
         System.out.println("Liste des animaux:");
         spa.afficherTout();
 
-
-/*
         System.out.println("Nombre de jour à surveiller");
         int nbNuit = Integer.parseInt(sc.nextLine());
         int i = 1;
         do {
+            for (Animal obj : spa.getListAnimaux()) {
+                obj.testDeVie();
+            }
 
+            System.out.print("Après la nuit n : " + i);
+            System.out.println(" Liste des animaux:");
+            spa.afficherTout();
 
+            spa.enleverMort();
+
+            i++;
         } while(i <= nbNuit);
 
-*/
+
 
     }
 }
