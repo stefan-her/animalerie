@@ -172,8 +172,18 @@ public class Animalerie {
             int ageHumain = obj.getAgeHumain();
             String vivantOuMort = (obj.getVieMort()) ? "Vivant" : "Mort";
             String text = String.format(textPattern, animal, nom, sexe, age, ageHumain, vivantOuMort);
-            System.out.println("-> " + text);
+            System.out.print("-> " + text);
+
+            if(obj instanceof Chien) {
+                System.out.print(" race : " + ((Chien) obj).getRace());
+            }
+            System.out.println();
+
             obj.crier();
+
+
+
+
         }
     }
 
