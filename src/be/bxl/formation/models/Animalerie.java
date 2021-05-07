@@ -173,6 +173,7 @@ public class Animalerie {
             String vivantOuMort = (obj.getVieMort()) ? "Vivant" : "Mort";
             String text = String.format(textPattern, animal, nom, sexe, age, ageHumain, vivantOuMort);
             System.out.println("-> " + text);
+            obj.crier();
         }
     }
 

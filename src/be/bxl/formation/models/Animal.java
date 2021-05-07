@@ -1,6 +1,6 @@
 package be.bxl.formation.models;
 
-public class Animal {
+public abstract class Animal {
 
     private String nom;
     private double poid;
@@ -72,7 +72,7 @@ public class Animal {
         this.age = age;
     }
 
-    public void crier() {}
+    public abstract void crier();
 
     public void testDeVie() {
         if(getVieMort()) {
